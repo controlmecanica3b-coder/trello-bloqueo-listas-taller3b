@@ -1,0 +1,9 @@
+{
+  "name": "Bloqueo de Listas Taller 3B",
+  "details": "Power-Up para bloquear movimiento de listas espec\u00edficas.",
+  "capabilities": [
+    "board-buttons",
+    "list-actions"
+  ],
+  "connectors": {}
+}
