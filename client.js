@@ -1,5 +1,3 @@
-
-/* Power-Up básico – bloquea acciones en listas */
 var blockedLists = [
     "AVALÚOS PENDIENTES ENVIAR",
     "AVALÚOS PENDIENTES SUPERVISIÓN ERICK",
@@ -30,20 +28,28 @@ var blockedLists = [
 ];
 
 window.TrelloPowerUp.initialize({
-  'list-actions': function(t, options){
-    return t.list('name').then(function(list){
-      if(blockedLists.includes(list.name)){
-        return [{
-            text: "🔒 Lista bloqueada",
-            callback: function(){
-                return t.alert({
-                  message: "Esta lista está bloqueada y no se puede mover.",
-                  duration: 6
-                });
+    'list-actions': function(t, options) {
+        return t.list('name').then(function(list) {
+            if (blockedLists.includes(list.name)) {
+                return [{
+                    text: "🔒 Lista bloqueada",
+                    callback: function() {
+                        return t.alert({
+                            message: "Esta lista está bloqueada y no se puede mover.",
+                            duration: 6
+                        });
+                    }
+                }];
             }
-        }];
-      }
-      return [];
-    });
-  }
+            return [];
+        });
+    },
+
+    'on-mutable': function(t, options) {
+        const nombreLista = options.list.name;
+        if (blockedLists.includes(nombreLista)) {
+            return { editable: false, movable: false };
+        }
+        return { editable: true, movable: true };
+    }
 });
