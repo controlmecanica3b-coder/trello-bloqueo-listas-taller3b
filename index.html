@@ -4,78 +4,13 @@
     <meta charset="UTF-8" />
     <title>Bloqueo de Listas - Power-Up</title>
     <script src="https://p.trellocdn.com/power-up.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<h1>Power-Up Bloqueo de Listas</h1>
-<p>Este Power-Up evita que los usuarios muevan las listas seleccionadas en el tablero.</p>
+    <h1>Power-Up Bloqueo de Listas</h1>
+    <p>Este Power-Up evita que los usuarios muevan las listas seleccionadas en el tablero.</p>
 
-<script>
-// Inicializar Trello Power-Up
-var t = TrelloPowerUp.iframe();
-
-// Aquí definimos las listas que NO se pueden mover
-const listasBloqueadas = [
-  "AVALÚOS PENDIENTES ENVIAR",
-  "AVALÚOS PENDIENTES SUPERVISIÓN ERICK",
-  "AVALÚOS PENDIENTES COTIZACIÓN ERICK",
-  "AVALUOS PENDIENTES DE SUPERVICIÓN JULIO",
-  "AVALÚO PENDIENTES DE COTIZACIÓN JULIO",
-  "AVALÚOS FINALIZADOS",
-  "ESPERA DE PROPUESTA INS",
-  "REVISIÓN DE PROPUESTA/AVALUO Y APELACIONES",
-  "ESPERANDO REPUESTOS ASEGURADORAS PRIVADAS",
-  "EN COMPRA DE REPUESTOS",
-  "COMPRAS REALIZADAS Y P.E PENDIENTES",
-  "DECLINADOS / NO REPARADOS",
-  "PARA INGRESAR A REPARACIÓN",
-  "INGRESOS",
-  "ENDEREZADO",
-  "ALISTADO",
-  "ARMADO Y PULIDO",
-  "LISTO PARA ENTREGA",
-  "VEHÍCULOS REPARACIÓN EXTERNA AL TALLER 3B",
-  "ENTREGADO EN PROCESO DE COBRO INS / PJ ANDY",
-  "ENTREGADO EN COBRO ASEGURADORAS NATY",
-  "ENTREGADO EN COBRO PARTICULARES NATY",
-  "ENTREGADOS CON REPUESTOS PENDIENTES",
-  "ENTREGADOS ADICIONAL PENDI. ASEGURADORAS M.O. Y REPUESTOS ERICK - JULIO",
-  "REINGRESO A TALLER PARA INSTALAR PIEZAS PENDIENTES",
-  "COBRADOS EN PROCESO DE LIQUIDAR Y ARCHIVO MARY - casos cancelados"
-];
-
-// Acción que aparece en los tres puntitos de la lista
-window.TrelloPowerUp.initialize({
-  'list-actions': function(t, options) {
-    return [{
-      text: 'Bloqueo activo',
-      callback: function(t) {
-        return t.alert({
-          message: 'Esta lista está bloqueada y no se puede mover.',
-          duration: 5
-        });
-      }
-    }];
-  },
-
-  // Evitar que la lista se mueva
-  'on-mutable': function(t, options) {
-    const nombreLista = options.list.name;
-
-    if (listasBloqueadas.includes(nombreLista)) {
-      return {
-        editable: false,
-        movable: false
-      };
-    }
-
-    return {
-      editable: true,
-      movable: true
-    };
-  }
-});
-</script>
-
+    <!-- Lógica del Power-Up -->
+    <script src="client.js"></script>
 </body>
 </html>
