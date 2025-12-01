@@ -1,9 +1,18 @@
 {
   "name": "Bloqueo de Listas Taller 3B",
-  "details": "Power-Up para bloquear movimiento de listas espec\u00edficas.",
+  "details": "Power-Up para bloquear movimiento de listas específicas.",
+  "version": "1.0",
+  "author": "Tu Nombre",
+  "icon": {
+    "url": "https://cdn-icons-png.flaticon.com/512/61/61456.png"
+  },
   "capabilities": [
-    "board-buttons",
-    "list-actions"
+    "list-actions",
+    "on-mutable"
   ],
+  "iframe": {
+    "url": "https://raw.githubusercontent.com/usuario/repositorio/rama/index.html",
+    "height": 400
+  },
   "connectors": {}
 }
