@@ -6,14 +6,12 @@ body {
     margin: 0;
 }
 
-/* Título principal */
 h1 {
-    color: #0079bf; /* Azul Trello */
+    color: #0079bf;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-/* Subtítulos / encabezados secundarios */
 h2 {
     color: #333;
     font-size: 16px;
@@ -21,14 +19,12 @@ h2 {
     margin-bottom: 5px;
 }
 
-/* Párrafos */
 p {
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 10px;
 }
 
-/* Botón de alerta (si quieres agregar uno dentro del iframe) */
 button {
     background-color: #0079bf;
     color: #fff;
@@ -42,7 +38,6 @@ button:hover {
     background-color: #026aa7;
 }
 
-/* Contenedores o cajas de mensajes */
 .message-box {
     border: 1px solid #ccc;
     background-color: #fff;
@@ -50,3 +45,4 @@ button:hover {
     border-radius: 4px;
     margin-bottom: 10px;
 }
+
